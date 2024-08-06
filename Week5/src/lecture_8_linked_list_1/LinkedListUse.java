@@ -1,5 +1,8 @@
 package lecture_8_linked_list_1;
 
+import assignment.Eliminate_Duplicates;
+import assignment.Palindrome;
+
 import java.net.Inet4Address;
 import java.util.Scanner;
 
@@ -73,15 +76,35 @@ public class LinkedListUse {
         return head;
 
     }
+    public static Node<Integer> reverse(Node<Integer> head)
+    {
+        Node<Integer> prev=null,nexte=null;
 
+        while(head!=null)
+        {
+            nexte=head.next;
+            head.next=prev;
+            prev=head;
+            head=nexte;
+
+        }
+
+        return prev;
+
+    }
     public static void main(String[] args) {
 
         Node<Integer> head=optimizedTakeInput();
-
-
-        Insert_Node_At_ith_Pos p=new Insert_Node_At_ith_Pos();
-       head= p.insert(head,80,100);
         print(head);
+        System.out.println();
+
+        Palindrome p=new Palindrome();
+        System.out.println(p.isPalindrome(head));
+
+
+
+
+
 
 
 
