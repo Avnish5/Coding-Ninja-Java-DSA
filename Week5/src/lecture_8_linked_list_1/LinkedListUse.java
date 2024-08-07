@@ -1,5 +1,6 @@
 package lecture_8_linked_list_1;
 
+import assignment.Append_Last_n;
 import assignment.Eliminate_Duplicates;
 import assignment.Palindrome;
 
@@ -98,8 +99,9 @@ public class LinkedListUse {
         print(head);
         System.out.println();
 
-        Palindrome p=new Palindrome();
-        System.out.println(p.isPalindrome(head));
+        Append_Last_n p=new Append_Last_n();
+       head= p.appendLastNToFirst(head,3);
+       print(head);
 
 
 
