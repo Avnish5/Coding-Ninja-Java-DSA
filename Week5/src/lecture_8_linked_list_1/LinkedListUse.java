@@ -18,7 +18,7 @@ public class LinkedListUse {
         }
     }
 
-    public static Node<Integer> takeInput()
+    public  Node<Integer> takeInput()
     {
         Node<Integer> head=null;
         Scanner s=new Scanner(System.in);
@@ -49,7 +49,7 @@ public class LinkedListUse {
 
     }
 
-    public static Node<Integer> optimizedTakeInput()
+    public Node<Integer> optimizedTakeInput()
     {
         Node<Integer> head=null;
         Node<Integer> tail=null;
@@ -77,31 +77,17 @@ public class LinkedListUse {
         return head;
 
     }
-    public static Node<Integer> reverse(Node<Integer> head)
-    {
-        Node<Integer> prev=null,nexte=null;
 
-        while(head!=null)
-        {
-            nexte=head.next;
-            head.next=prev;
-            prev=head;
-            head=nexte;
-
-        }
-
-        return prev;
-
-    }
     public static void main(String[] args) {
 
-        Node<Integer> head=optimizedTakeInput();
+        LinkedListUse listUse = new LinkedListUse(); // Create an instance
+        Node<Integer> head = listUse.optimizedTakeInput(); // Call the method on the instance
         print(head);
         System.out.println();
 
-        Append_Last_n p=new Append_Last_n();
-       head= p.appendLastNToFirst(head,3);
-       print(head);
+        Append_Last_n p = new Append_Last_n();
+        head = p.appendLastNToFirst(head, 3);
+        print(head);
 
 
 

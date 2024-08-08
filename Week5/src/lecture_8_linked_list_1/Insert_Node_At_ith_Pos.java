@@ -13,13 +13,13 @@ public class Insert_Node_At_ith_Pos {
 
         int i=0;
         Node<Integer> temp=head;
-        while(i<pos-1&&temp!=null)
+        while(i<pos-1)
         {
             i++;
             temp=temp.next;
         }
 
-        if(temp==null) return head;
+
 
         newNode.next=temp.next;
         temp.next=newNode;

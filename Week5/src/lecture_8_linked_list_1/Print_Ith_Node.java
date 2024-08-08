@@ -34,15 +34,15 @@ Sample Output 2 :
 public class Print_Ith_Node {
 
     public static void printIthNode(Node<Integer> head, int i) {
-        int c=0;
-        Node<Integer> temp=head;
-        while(c!=i&&temp!=null)
+        int position=0;
+        Node<Integer>  temp=head;
+        while(position<i&&temp!=null)
         {
-            c++;
+            position++;
             temp=temp.next;
         }
 
-        if(c==i&&temp!=null)
+        if(temp!=null)
         {
             System.out.println(temp.data);
         }

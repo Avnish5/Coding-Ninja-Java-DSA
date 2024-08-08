@@ -34,18 +34,12 @@ public class delete_Node_At_ith_Pos {
 
     public static Node<Integer> deleteNode( Node<Integer> head, int pos) {
 
-        if(head==null)
-        {
-            return head;
-        }
+        if(head==null) return head;
 
-        if(pos==0)
-        {
-            return head.next;
-        }
+        if(pos==0) return head.next;
 
+        Node<Integer>  temp=head;
 
-        Node<Integer> temp=head;
         for(int i=0;i<pos-1&&temp!=null;i++)
         {
             temp=temp.next;
@@ -53,7 +47,9 @@ public class delete_Node_At_ith_Pos {
 
         if(temp==null||temp.next==null) return head;
 
-        temp.next=temp.next.next;
+        Node<Integer> freeNode=temp.next;
+        temp.next=freeNode.next;
+        freeNode.next=null;
         return head;
 
     }

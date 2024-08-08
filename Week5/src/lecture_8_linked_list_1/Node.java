@@ -1,5 +1,9 @@
 package lecture_8_linked_list_1;
 
+import assignment.Append_Last_n;
+
+import java.util.Scanner;
+
 public class Node<T> {
 
      public T data;
@@ -10,4 +14,7 @@ public class Node<T> {
         this.data=data;
         this.next=null;
     }
+
+
+
 }
