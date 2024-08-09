@@ -75,8 +75,9 @@ public class LinkedListUse {
 
         LinkedListUse listUse = new LinkedListUse(); // Create an instance
         Node<Integer> head = listUse.optimizedTakeInput(); // Call the method on the instance
+        Reverse_LL_Better p=new Reverse_LL_Better();
+        head=p.reverseLL(head);
         print(head);
-        System.out.println();
 
 
      }
