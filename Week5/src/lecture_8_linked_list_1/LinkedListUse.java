@@ -1,4 +1,4 @@
-package lecture_8_linked_list_1;
+jipackage lecture_8_linked_list_1;
 
 import assignment.Append_Last_n;
 import assignment.Eliminate_Duplicates;
@@ -84,10 +84,7 @@ public class LinkedListUse {
         Node<Integer> head = listUse.optimizedTakeInput(); // Call the method on the instance
         print(head);
         System.out.println();
-
-        Append_Last_n p = new Append_Last_n();
-        head = p.appendLastNToFirst(head, 3);
-        print(head);
+;
 
 
 
