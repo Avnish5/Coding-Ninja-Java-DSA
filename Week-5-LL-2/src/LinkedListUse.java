@@ -75,8 +75,8 @@ public class LinkedListUse {
 
         LinkedListUse listUse = new LinkedListUse(); // Create an instance
         Node<Integer> head = listUse.optimizedTakeInput(); // Call the method on the instance
-        Assignment_Even_After_Odd p=new Assignment_Even_After_Odd();
-        head=p.evenAfterOdd(head);
+        Assignment_Delete_Every_N_nodes p=new Assignment_Delete_Every_N_nodes();
+        head=p.skipMdeleteN(head,2,3);
         print(head);
 
 
