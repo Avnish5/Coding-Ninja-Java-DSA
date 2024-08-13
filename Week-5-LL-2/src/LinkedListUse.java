@@ -75,8 +75,8 @@ public class LinkedListUse {
 
         LinkedListUse listUse = new LinkedListUse(); // Create an instance
         Node<Integer> head = listUse.optimizedTakeInput(); // Call the method on the instance
-        Assignment_Delete_Every_N_nodes p=new Assignment_Delete_Every_N_nodes();
-        head=p.skipMdeleteN(head,2,3);
+        Assignment_Swap_2_Nodes p=new Assignment_Swap_2_Nodes();
+        head=p.swapNodes(head,0,6);
         print(head);
 
 
