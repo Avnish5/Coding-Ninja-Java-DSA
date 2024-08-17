@@ -43,9 +43,65 @@ public class TreeUse {
 
     }
 
-    public static void main(String[] args) {
+    public static TreeNode<Integer> takeInputLevelWise()  {
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter the root node: ");
+        int n=s.nextInt();
+        TreeNode<Integer> root=new TreeNode<Integer>(n);
 
-        TreeNode<Integer> root=takeInput();
-        print(root);
+        QueueUsingLL<TreeNode<Integer>> pendingNodes=new QueueUsingLL<>();
+        pendingNodes.enqueue(root);
+
+        while(!pendingNodes.isEmpty())
+        {
+            try{
+                TreeNode<Integer> frontNode=pendingNodes.dequeue();
+                System.out.println("Enter the no of children for "+frontNode.data+": ");
+                int childCount=s.nextInt();
+
+                for(int i=0;i<childCount;i++)
+                {
+                    System.out.println("Enter the "+i+"th child of "+frontNode.data);
+                    int childData=s.nextInt();
+                    TreeNode<Integer> child=new TreeNode<>(childData);
+                    frontNode.children.add(child);
+                    pendingNodes.enqueue(child);
+                }
+
+            }
+            catch (QueueEmptyException  e)
+            {
+                return null;
+            }
+        }
+        return root;
+
+    }
+
+    public static void printLevelWise(TreeNode<Integer> root) throws QueueEmptyException {
+        if(root==null) return;
+
+        QueueUsingLL<TreeNode<Integer>> pendingNodes=new QueueUsingLL<>();
+        pendingNodes.enqueue(root);
+
+        while(!pendingNodes.isEmpty())
+        {
+            TreeNode<Integer> frontNode=pendingNodes.dequeue();
+            System.out.print(frontNode.data+":");
+
+            for(int i=0;i<frontNode.children.size();i++)
+            {
+                System.out.print(frontNode.children.get(i).data+",");
+                pendingNodes.enqueue(frontNode.children.get(i));
+            }
+            System.out.println();
+        }
+
+    }
+
+    public static void main(String[] args) throws QueueEmptyException {
+
+        TreeNode<Integer> root=takeInputLevelWise();
+        printLevelWise(root);
     }
 }
