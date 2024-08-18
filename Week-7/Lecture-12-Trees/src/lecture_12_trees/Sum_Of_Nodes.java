@@ -6,11 +6,12 @@ public class Sum_Of_Nodes {
 
         int sum=root.data;
 
-        for(int i=0;i<root.children.size();i++)
+        for(TreeNode<Integer> child:root.children)
         {
-            sum+=sumOfAllNode(root.children.get(i));
+            sum+=sumOfAllNode(child);
         }
 
         return sum;
     }
 }
+

@@ -1,5 +1,7 @@
 package lecture_12_trees;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class TreeUse {
@@ -49,13 +51,13 @@ public class TreeUse {
         int n=s.nextInt();
         TreeNode<Integer> root=new TreeNode<Integer>(n);
 
-        QueueUsingLL<TreeNode<Integer>> pendingNodes=new QueueUsingLL<>();
-        pendingNodes.enqueue(root);
+        Queue<TreeNode<Integer>> pendingNodes=new LinkedList<>();
+        pendingNodes.add(root);
 
         while(!pendingNodes.isEmpty())
         {
-            try{
-                TreeNode<Integer> frontNode=pendingNodes.dequeue();
+
+                TreeNode<Integer> frontNode=pendingNodes.remove();
                 System.out.println("Enter the no of children for "+frontNode.data+": ");
                 int childCount=s.nextInt();
 
@@ -65,36 +67,37 @@ public class TreeUse {
                     int childData=s.nextInt();
                     TreeNode<Integer> child=new TreeNode<>(childData);
                     frontNode.children.add(child);
-                    pendingNodes.enqueue(child);
+                    pendingNodes.add(child);
                 }
 
-            }
-            catch (QueueEmptyException  e)
-            {
-                return null;
-            }
+
+
         }
         return root;
 
     }
 
-    public static void printLevelWise(TreeNode<Integer> root) throws QueueEmptyException {
+    public static void printLevelWise(TreeNode<Integer> root)  {
         if(root==null) return;
+        Queue<TreeNode<Integer>> q=new LinkedList<>();
 
-        QueueUsingLL<TreeNode<Integer>> pendingNodes=new QueueUsingLL<>();
-        pendingNodes.enqueue(root);
+        q.add(root);
+        q.add(null);
 
-        while(!pendingNodes.isEmpty())
+        while(!q.isEmpty())
         {
-            TreeNode<Integer> frontNode=pendingNodes.dequeue();
-            System.out.print(frontNode.data+":");
-
-            for(int i=0;i<frontNode.children.size();i++)
+            TreeNode<Integer> node = q.poll();
+            if(node != null)
             {
-                System.out.print(frontNode.children.get(i).data+",");
-                pendingNodes.enqueue(frontNode.children.get(i));
+                System.out.print(node.data + " ");
+                for(int i=0; i<node.children.size(); i++)
+                    q.add(node.children.get(i));
             }
-            System.out.println();
+            else{
+                System.out.println();
+                if(!q.isEmpty())
+                    q.add(null);
+            }
         }
 
     }

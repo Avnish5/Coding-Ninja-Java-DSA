@@ -6,9 +6,9 @@ public class Find_No_Of_Nodes {
 
         int count=1;
 
-        for(int i=0;i<root.children.size();i++)
+        for(TreeNode<Integer> child:root.children)
         {
-            count+=find(root.children.get(i));
+            count+=find(child);
         }
         return count;
     }
