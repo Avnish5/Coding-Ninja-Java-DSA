@@ -63,4 +63,15 @@ public class InPlaceHeapSort {
 
         }
     }
+
+    public static void main(String[] args) {
+        {
+            int[] input = {1, 23, 9, 18, 5};
+            inplaceHeapSort(input);
+            for(int i:input)
+            {
+                System.out.print(i+" ");
+            }
+        }
+    }
 }
