@@ -1,4 +1,10 @@
 package assignment;
+
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
 /*
 Problem statement
 You want to buy a ticket for a well-known concert which is happening in your city. But the number of tickets available is limited. Hence the sponsors of the concert decided to sell tickets to customers based on some priority.
@@ -35,4 +41,41 @@ Sample Output 2 :
 4
  */
 public class Buy_The_Ticket {
+
+    public static int buyTicket(int input[], int k) {
+        Queue<Integer> q = new LinkedList<>();
+        PriorityQueue<Integer> pq=new PriorityQueue<>(Comparator.reverseOrder());
+
+        for(int i=0;i<input.length;i++)
+        {
+            q.add(i);
+            pq.add(input[i]);
+        }
+
+
+        int t=0;
+
+        while(!q.isEmpty())
+        {
+            boolean flag=false;
+            if(input[q.peek()]<pq.peek())
+            {
+                q.add(q.poll());
+            }
+            else if(input[q.peek()]==pq.peek())
+            {
+
+                t++;
+
+                pq.poll();
+
+                if(q.peek()==k) break;
+                q.poll();
+            }
+
+        }
+
+        return t;
+
+    }
 }
