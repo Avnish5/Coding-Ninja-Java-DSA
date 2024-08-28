@@ -119,5 +119,7 @@ public class TreeUse {
         Scanner s=new Scanner(System.in);
         BinaryTreeNode<Integer> root=takeInputLevelWise();
         print(root);
+
+
     }
 }
