@@ -1,5 +1,7 @@
 package lecture_23_graph_1;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 
 public class Graph {
@@ -29,6 +31,47 @@ public class Graph {
             }
         }
     }
+
+    public static void printBFSHelper(int edges[][],int sv,boolean visited[])
+    {
+        Queue<Integer> q=new LinkedList<>();
+        q.add(sv);
+        int n=edges.length;
+
+        visited[sv]=true;
+
+        while(!q.isEmpty())
+        {
+            int front=q.poll();
+
+
+
+             System.out.println(front);
+
+
+            for(int i=0;i<n;i++)
+            {
+                if(edges[front][i]==1 && !visited[i] )
+                {
+                    q.add(i);
+                    visited[i]=true;
+                }
+            }
+        }
+    }
+
+    public static void printBFS(int edges[][])
+    {
+        boolean visited[]=new boolean[edges.length];
+        for(int i=0;i<edges.length;i++)
+        {
+            if(!visited[i])
+            {
+                printBFSHelper(edges,i,visited);
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
         Scanner s=new Scanner(System.in);
@@ -45,7 +88,7 @@ public class Graph {
             edges[sv][fv]=1;
         }
 
-        print(edges);
+        printBFS(edges);
 
     }
 }
