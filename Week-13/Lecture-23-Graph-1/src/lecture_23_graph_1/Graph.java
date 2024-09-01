@@ -1,8 +1,6 @@
 package lecture_23_graph_1;
 
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 public class Graph {
 
@@ -72,6 +70,47 @@ public class Graph {
         }
     }
 
+    public static void getPath(int edges[][],int start,int end)
+    {
+        boolean visited[]=new boolean[edges.length];
+        Queue<Integer> q=new LinkedList<>();
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        hm.put(start,null);
+        q.add(start);
+        visited[start]=true;
+
+        while(!q.isEmpty())
+        {
+            int front=q.poll();
+            if(front==end)
+            {
+               break;
+            }
+
+            for(int i=0;i<edges.length;i++)
+            {
+                if(edges[front][i]==1&&!visited[i])
+                {
+                    q.add(i);
+                    visited[i]=true;
+                    hm.put(i,front);
+
+                }
+            }
+
+        }
+
+        List<Integer> path = new ArrayList<>();
+        for (Integer at = end; at != null; at = hm.get(at)) {
+            path.add(at);
+        }
+
+
+        // Print the path
+        for (int node : path) {
+            System.out.print(node + " ");
+        }
+    }
     public static void main(String[] args) {
 
         Scanner s=new Scanner(System.in);
@@ -88,7 +127,9 @@ public class Graph {
             edges[sv][fv]=1;
         }
 
-        printBFS(edges);
+        int start=s.nextInt();
+        int end=s.nextInt();
+        getPath(edges,start,end);
 
     }
 }
