@@ -25,16 +25,6 @@ Sample Input 2 :
 Sample Output 2 :
  false
 
-public class Solution {
-
-	public static boolean isValidPath(int[][] maze,int[][] path,int x,int y,int n)
-	{
-		return (x>=0 && x<n && y>=0 && y<n && maze[x][y]==1 && path[x][y]!=1);
-	}
-
-	public static boolean checkMaze(int[][] maze,int[][] path,int x,int y,int n)
-	{
-
 
  */
 public class Rat_In_A_Maze {
