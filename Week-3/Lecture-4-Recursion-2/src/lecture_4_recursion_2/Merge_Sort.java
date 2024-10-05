@@ -1,15 +1,14 @@
-import java.util.Arrays;
+package lecture_4_recursion_2;
 
-public class Main {
+public class Merge_Sort {
 
     public static void merge(int[] arr,int s1,int e1,int s2,int e2)
     {
-
-        int[] output = new int[e2 - s1 + 1];
-
+        int[] output=new int[e2-s1+1];
         int k=0;
         int i=s1;
         int j=s2;
+
         while(i<=e1&&j<=e2)
         {
             if(arr[i]>arr[j])
@@ -18,7 +17,7 @@ public class Main {
                 j++;
                 k++;
             }
-            else {
+            else{
                 output[k]=arr[i];
                 i++;
                 k++;
@@ -38,26 +37,21 @@ public class Main {
             j++;
             k++;
         }
-        int t=0;
-        for (int l = 0; l < output.length; l++) {
-            arr[s1 + l] = output[l];
+
+        for(int l=0;l<output.length;l++)
+        {
+            arr[s1+l]=output[l];
         }
 
     }
-    public static void mergeSort(int[] arr,int s,int e)
-    {
-        if(s>=e) return;
-        int mid=(s+e)/2;
-        mergeSort(arr,s,mid);
-        mergeSort(arr,mid+1,e);
-        merge(arr,s,mid,mid+1,e);
-    }
-    public static void main(String[] args) {
 
-        int[] arr={5,1,3,-7,2};
-        int e=arr.length-1;
-       mergeSort(arr,0,e);
-        System.out.println(Arrays.toString(arr));
+    public static void mergeSort(int[] arr, int l, int r){
+        if(l>=r) return;
+
+        int mid=(l+r)/2;
+        mergeSort(arr, l, mid);
+        mergeSort(arr, mid+1, r);
+        merge(arr, l, mid,mid+1,r);
 
     }
 }
