@@ -1,8 +1,29 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+package assignment;
+/*
+Problem statement
+Given an integer array (of length n), find and return all the subsets of input array.
 
-public class Main {
+NOTE- Subsets are of length varying from 0 to n, that contain elements of the array. But the order of elements should remain same as in the input array.
+
+Note :
+The order of subsets are not important.
+
+
+Detailed explanation ( Input/output format, Notes, Images )
+Sample Input:
+3
+15 20 12
+Sample Output:
+[] (this just represents an empty array, don't worry about the square brackets)
+12
+20
+20 12
+15
+15 12
+15 20
+15 20 12
+ */
+public class Return_Subset_Array {
     public static int[][] subsets(int input[],int s,int e)
     {
         if(s>e)
@@ -15,22 +36,24 @@ public class Main {
         int[][] ans=new int[2*smallAns.length][];
 
         int k=0;
+
         for (int[] smallAn : smallAns) {
             ans[k] = smallAn;
             k++;
         }
-
         for(int i=0;i< smallAns.length;i++)
         {
             int[] subset=new int[smallAns[i].length+1];
             int l=0;
+            subset[l]=input[s];
+            l++;
 
             for(int j=0;j<smallAns[i].length;j++)
             {
                 subset[l]=smallAns[i][j];
                 l++;
             }
-            subset[l]=input[s];
+
             ans[k]=subset;
             k++;
         }
@@ -42,18 +65,5 @@ public class Main {
     public static int[][] subsets(int input[]) {
         return subsets(input,0,input.length-1);
 
-    }
-    public static void main(String[] args) {
-        int[] input = {1, 2, 3};
-        int[][] allSubsets = subsets(input);
-
-        // Print all subsets
-        for (int[] subset : allSubsets) {
-            System.out.print("[");
-            for (int num : subset) {
-                System.out.print(num + " ");
-            }
-            System.out.print("] ");
-        }
     }
 }
