@@ -1,7 +1,9 @@
-import java.util.Arrays;
+package lecture_4_recursion_2;
+
 import java.util.HashMap;
 
-public class Main {
+public class Print_Keypad {
+
     public static String[] getKeypadCharacters(int number) {
         HashMap<Integer, String[]> keypad = new HashMap<>();
         keypad.put(2, new String[]{"a", "b", "c"});
@@ -16,38 +18,23 @@ public class Main {
         // Return the corresponding characters or an empty array for invalid input
         return keypad.getOrDefault(number, new String[]{});
     }
-
-    public static String[] keypad(int n){
-
-        if(n==0)
+    public static void printKeypad(int input,String output)
+    {
+        if(input==0)
         {
-            String[] output={""};
-            return output;
+            System.out.println(output);
+            return;
         }
 
-        String[] smallAns=keypad(n/10);
-        String[] arr=getKeypadCharacters(n%10);
-        String[] ans=new String[smallAns.length* arr.length];
-        int k=0;
-        for(int i=0;i< arr.length;i++)
+        String[] arr=getKeypadCharacters(input%10);
+        for(int i=0;i<arr.length;i++)
         {
-            for(int j=0;j< smallAns.length;j++)
-            {
-                ans[k]=smallAns[j]+arr[i];
-                k++;
-            }
+            printKeypad(input/10,arr[i]+output);
         }
-
-        return ans;
-
-
     }
-    public static void main(String[] args) {
+    public static void printKeypad(int input){
 
-        String[] ans=keypad(23);
-        for(String s:ans)
-        {
-            System.out.println(s);
-        }
+        printKeypad(input,"");
+
     }
 }

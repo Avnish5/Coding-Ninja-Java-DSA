@@ -1,7 +1,33 @@
-import java.util.Arrays;
-import java.util.HashMap;
+package lecture_4_recursion_2;
 
-public class Main {
+import java.util.HashMap;
+/*
+Problem statement
+Given an integer n, using phone keypad find out all the possible strings that can be made using digits of input n.
+
+Return empty string for numbers 0 and 1.
+
+Note :
+1. The order of strings are not important.
+2. Input and output has already been managed for you. You just have to populate the output array and return the count of elements populated in the output array.
+Detailed explanation ( Input/output format, Notes, Images )
+Constraints :
+1 <= n <= 10^6
+
+Sample Input:
+23
+Sample Output:
+ad
+ae
+af
+bd
+be
+bf
+cd
+ce
+cf
+ */
+public class Return_Keypad {
     public static String[] getKeypadCharacters(int number) {
         HashMap<Integer, String[]> keypad = new HashMap<>();
         keypad.put(2, new String[]{"a", "b", "c"});
@@ -41,13 +67,5 @@ public class Main {
         return ans;
 
 
-    }
-    public static void main(String[] args) {
-
-        String[] ans=keypad(23);
-        for(String s:ans)
-        {
-            System.out.println(s);
-        }
     }
 }
