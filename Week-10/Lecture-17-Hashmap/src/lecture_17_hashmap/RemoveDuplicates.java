@@ -5,20 +5,24 @@ import java.util.HashMap;
 
 public class RemoveDuplicates {
 
-    public ArrayList<Integer> removeDuplicate(int[] arr)
+    public static  ArrayList<Integer> removeDuplicates(int[] arr)
     {
-        ArrayList<Integer> output=new ArrayList<>();
         HashMap<Integer,Boolean> seen=new HashMap<>();
+        ArrayList<Integer> output=new ArrayList<>();
 
-        for (int i : arr) {
-            if (seen.containsKey(i)) {
-                continue;
-            }
-
-            output.add(i);
-            seen.put(i, true);
+        for(int val:arr)
+        {
+            if(seen.containsKey(val)) continue;
+            output.add(val);
+            seen.put(val,true);
         }
 
-        return output;
+       return output;
+    }
+
+    public static void main(String[] args) {
+        int[] arr={1,2,2,3,4,5,5,1};
+        ArrayList<Integer> list=removeDuplicates(arr);
+        System.out.println(list);
     }
 }

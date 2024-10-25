@@ -1,6 +1,7 @@
 package lecture_17_hashmap;
 
 import java.util.HashMap;
+
 /*
 Problem statement
 You are given an array of integers that contain numbers in random order. Write a program to find and return the number which occurs the maximum times in the given input.
@@ -24,27 +25,25 @@ Sample Output 2 :
 Explanation:
 Here, both element '2' and element '4' have same frequency but '2' ocurr first in orignal array that's why we are returning '2' as output.
 
-
  */
-public class Maximum_Frequency_Number {
-    public static int maxFrequencyNumber(int[] arr) {
+public class Max_Frequency_Number {
+    public static int maxFrequencyNumber(int[] arr){
+        HashMap<Integer,Integer> hm=new HashMap<>();
 
-        if (arr.length == 0) return -1;
-
-        HashMap<Integer, Integer> frequencyMap = new HashMap<>();
-
-        for (int num : arr) {
-            frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+        for(int num:arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
         }
 
+        int ans=Integer.MIN_VALUE;
+        int count=0;
 
-        int max = 0;
-        int ans = Integer.MIN_VALUE;
-
-        for (int i : arr) {
-            if (frequencyMap.get(i) > max) {
-                max = frequencyMap.get(i);
-                ans = i;
+        for(int i:arr)
+        {
+            if(hm.get(i)>count)
+            {
+                count=hm.get(i);
+                ans=i;
             }
         }
 
