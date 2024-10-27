@@ -58,6 +58,11 @@ public class StackUsingArray {
 
     public int pop()
     {
+        if(isEmpty())
+       {
+           StackEmptyException e=new StackEmptyException();
+           throw  e;
+       }
         int temp=data[top];
         top--;
         return temp;
