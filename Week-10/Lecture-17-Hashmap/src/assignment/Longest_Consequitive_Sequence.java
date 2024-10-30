@@ -1,5 +1,6 @@
 package assignment;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
@@ -38,67 +39,50 @@ Explanation:The longest consecutive sequence here is [15,16]. So the output is [
  */
 public class Longest_Consequitive_Sequence {
 
-    public static void longestConsecutiveIncreasingSequence(int[] arr) {
+    public static ArrayList<Integer> longestConsecutiveIncreasingSequence(int[] arr) {
 
-        Arrays.sort(arr);
-
-        int count=0;
-        int longest=1;
-        int last=Integer.MIN_VALUE;
-        int sl=0;
-        int el=0;
-
-        for(int i=0;i<arr.length;i++)
+        HashMap<Integer,Boolean> hm=new HashMap<>();
+        for(int num:arr)
         {
-            if(arr[i]-1==last)
-            {
-                count++;
-                last=arr[i];
-
-
-            }
-            else if(arr[i]!=last)
-            {
-                count=1;
-                last=arr[i];
-                sl=i;
-
-
-            }
-
-                if(count>longest)
-                {
-                    System.out.println("count: "+count+" lonest: "+longest);
-                    longest=count;
-                    System.out.println("count: "+count+" lonest: "+longest);
-                    el=i;
-                    System.out.println(sl+" "+el);
-                }
-
-
-
-            //longest=Math.max(count,longest);
+            hm.put(num,true);
         }
 
+        int longestStart=0;
+        int longestEnd=0;
+        int longestLength=0;
 
         for(int num:arr)
         {
-            System.out.print(num+" ");
+            if(!hm.containsKey(num-1))
+            {
+                int currentNum=num;
+                int currentLength=1;
+
+                while(hm.containsKey(currentNum+1)){
+                    currentNum++;
+                    currentLength++;
+                }
+
+                if(currentLength>longestLength)
+                {
+                    longestLength=currentLength;
+                    longestStart=num;
+                    longestEnd=currentNum;
+                }
+            }
         }
-        System.out.println();
-        System.out.println(sl);
-        System.out.println(arr[sl]+" "+arr[el]);
 
+        ArrayList<Integer> result=new ArrayList<>();
+        if(longestLength>1)
+        {
+            result.add(longestStart);
+            result.add(longestEnd);
+        }
+        else {
+            result.add(longestStart);
+        }
 
+        return result;
     }
 
-
-
-    public static void main(String[] args) {
-      //int[] arr={9,1,8,6,3,4,2,7,10,15};
-      //int[] arr = {2, 12, 9, 16, 10, 5, 3, 20, 25, 11, 1, 8, 6};
-        //int[] arr={3,7,2,1,9,8,41};
-        int[] arr={15,24,23,12,19,11,16};
-      longestConsecutiveIncreasingSequence(arr);
-    }
 }

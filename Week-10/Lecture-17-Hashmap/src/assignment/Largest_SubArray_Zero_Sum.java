@@ -1,4 +1,7 @@
 package assignment;
+
+import java.util.HashMap;
+
 /*
 Problem statement
 Given an array consisting of positive and negative integers, find the length of the longest subarray whose sum is zero.
@@ -19,7 +22,30 @@ You don't have to print anything. Just complete the definition of the function g
  */
 public class Largest_SubArray_Zero_Sum {
 
-    public static void lengthOfLongestSubsetWithZeroSum(int arr[]) {
-        // Write your code here
+    public static int lengthOfLongestSubsetWithZeroSum(int arr[]) {
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        int maxi=0;
+        int sum=0;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            sum+=arr[i];
+
+            if(sum==0)
+            {
+                maxi=i+1;
+            }
+            else {
+                if(hm.get(sum)!=null)
+                {
+                    maxi=Math.max(maxi,i-hm.get(sum));
+                }
+                else {
+                    hm.put(sum,i);
+                }
+            }
+        }
+
+        return maxi;
     }
 }

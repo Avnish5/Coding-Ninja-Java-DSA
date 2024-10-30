@@ -7,7 +7,7 @@ public class Map<K,V> {
     int size;
     int numBuckets;
 
-    public Map()
+    Map()
     {
         size=0;
         numBuckets=5;
@@ -17,62 +17,64 @@ public class Map<K,V> {
             buckets.add(null);
         }
     }
-
-    private int getBucketIndex(K key){
+    public int getSize()
+    {
+        return size;
+    }
+    public int getBucketIndex(K key)
+    {
         int hashCode=key.hashCode();
         return hashCode%numBuckets;
-    }
-
-    public int getSize(){
-        return size;
     }
 
     public double loadFactor(){
         return (1.0*size)/numBuckets;
     }
 
-    private void rehash(){
-        System.out.println("Rehashing buckets "+numBuckets+"  size "+size);
-        ArrayList<MapNode<K,V>> temp=buckets;
-        buckets=new ArrayList<>();
-
-        for(int i=0;i<2*numBuckets;i++){
-            buckets.add(null);
-        }
-
-        size=0;
-        numBuckets*=2;
-
-        for(int i=0;i<temp.size();i++){
-            MapNode<K,V> head=temp.get(i);
-
-            while(head!=null){
-                K key= head.key;;
-                V value=head.value;
-                insertKey(key,value);
-                head=head.next;
-            }
-
-        }
-    }
-
-    public V getValue(K key)
-    {
-
+    public V getValue(K key){
         int bucketIndex=getBucketIndex(key);
         MapNode<K,V> head=buckets.get(bucketIndex);
-        while(head!=null)
-        {
-            if(head.key.equals(key)){
-
+        while(head!=null){
+            if(head.key.equals(key))
+            {
                 return head.value;
             }
             head=head.next;
         }
+
         return null;
     }
 
-    public V removeKey(K key){
+    public void rehashing()
+    {
+        System.out.println("Rehashing:- numBuckets: "+numBuckets+" size: "+size);
+       ArrayList<MapNode<K,V>> temp=buckets;
+       buckets=new ArrayList<>();
+
+       for(int i=0;i<2*numBuckets;i++)
+       {
+           buckets.add(null);
+       }
+
+       size=0;
+       numBuckets*=2;
+
+       for(int i=0;i<temp.size();i++)
+       {
+           MapNode<K,V> head=temp.get(i);
+
+           while(head!=null){
+               K key= head.key;
+               V value=head.value;
+               insert(key,value);
+               head=head.next;
+           }
+       }
+
+    }
+
+    public V removeKey(K key)
+    {
         int bucketIndex=getBucketIndex(key);
         MapNode<K,V> head=buckets.get(bucketIndex);
         MapNode<K,V> prev=null;
@@ -90,36 +92,33 @@ public class Map<K,V> {
                     prev.next=head.next;
                 }
 
-                return  head.value;
+                return head.value;
             }
-
             prev=head;
             head=head.next;
         }
 
         return null;
+
     }
-    public void insertKey(K key,V value){
+    public void insert(K key,V value){
         int bucketIndex=getBucketIndex(key);
         MapNode<K,V> head=buckets.get(bucketIndex);
-        while(head!=null)
-        {
-            if(head.key.equals(key)){
+        while(head!=null){
+            if(head.key.equals(key))
+            {
                 head.value=value;
                 return;
             }
             head=head.next;
         }
-
         head=buckets.get(bucketIndex);
-        MapNode<K,V> newElementNode=new MapNode<>(key,value);
+        MapNode<K,V> newNode=new MapNode<>(key,value);
         size++;
-        newElementNode.next=head;
-        buckets.set(bucketIndex,newElementNode);
+        newNode.next=head;
+        buckets.set(bucketIndex,newNode);
         double lf=loadFactor();
-        if(lf>0.7) rehash();
-
+        if(lf>0.7) rehashing();
     }
-
 
 }
