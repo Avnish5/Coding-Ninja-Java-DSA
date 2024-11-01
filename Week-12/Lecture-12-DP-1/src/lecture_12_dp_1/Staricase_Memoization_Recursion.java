@@ -9,7 +9,8 @@ public class Staricase_Memoization_Recursion {
             arr[i] = -1;
         }
 
-        return staircase(n, arr);
+        return  staircase(n, arr);
+
     }
 
     public static int staircase(int n, int[] arr) {
@@ -23,5 +24,7 @@ public class Staricase_Memoization_Recursion {
         arr[n] = staircase(n - 1, arr) + staircase(n - 2, arr) + staircase(n - 3, arr);
         return arr[n];
     }
+
+
 
 }
