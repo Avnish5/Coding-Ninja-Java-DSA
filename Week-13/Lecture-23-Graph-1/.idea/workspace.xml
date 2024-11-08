@@ -7,13 +7,7 @@
     <list default="true" id="254a51d8-b87d-48f5-95ac-3636af1c47fb" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../Week-12/Lecture-13-DP-2/src/lecture_13_dp_2/KnapSack_Memoization.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week-12/Lecture-13-DP-2/src/lecture_13_dp_2/KnapSack_Memoization.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Week-12/Lecture-13-DP-2/src/lecture_13_dp_2/KnapSack_Recursion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week-12/Lecture-13-DP-2/src/lecture_13_dp_2/KnapSack_Recursion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_23_graph_1/Get_Path_DFS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_23_graph_1/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_23_graph_1/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_23_graph_1/Has_Path_BFS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_23_graph_1/Has_Path_DFS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_23_graph_1/Is_Connected.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lecture_23_graph_1/Print_All_Connected_Components.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lecture-24-Graph-2/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lecture-24-Graph-2/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lecture-24-Graph-2/.idea/misc.xml" beforeDir="false" />
@@ -49,6 +43,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Graph.executor": "Run",
+    "Application.Has_Path.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
@@ -76,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731050681394</updated>
-      <workItem from="1731050682441" duration="7169000" />
+      <workItem from="1731050682441" duration="9986000" />
     </task>
     <servers />
   </component>
