@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/../../Week-12/Lecture-13-DP-2/src/lecture_13_dp_2/KnapSack_Memoization.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week-12/Lecture-13-DP-2/src/lecture_13_dp_2/KnapSack_Memoization.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Week-12/Lecture-13-DP-2/src/lecture_13_dp_2/KnapSack_Recursion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week-12/Lecture-13-DP-2/src/lecture_13_dp_2/KnapSack_Recursion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_23_graph_1/Get_Path_DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_23_graph_1/Get_Path_DFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lecture-24-Graph-2/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lecture-24-Graph-2/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lecture-24-Graph-2/.idea/misc.xml" beforeDir="false" />
@@ -31,10 +32,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2oYdwD0m7yBk64lYHKx11OMQda3" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -42,6 +43,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.All_Connected_Components.executor": "Run",
+    "Application.Get_Path_BFS.executor": "Run",
+    "Application.Get_Path_DFS.executor": "Run",
     "Application.Graph.executor": "Run",
     "Application.Has_Path.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -71,7 +75,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731050681394</updated>
-      <workItem from="1731050682441" duration="9986000" />
+      <workItem from="1731050682441" duration="10947000" />
+      <workItem from="1731136248778" duration="4712000" />
     </task>
     <servers />
   </component>

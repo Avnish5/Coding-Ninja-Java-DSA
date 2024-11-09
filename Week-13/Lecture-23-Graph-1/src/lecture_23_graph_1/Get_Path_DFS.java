@@ -1,4 +1,8 @@
 package lecture_23_graph_1;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /*
 Problem statement
 Given an undirected graph G(V, E) and two vertices v1 and v2(as integers), find and print the path from v1 to v2 (if exists). Print nothing if there is no path between v1 and v2.
@@ -38,4 +42,58 @@ Sample Input 2:
 Sample Output 2:
  */
 public class Get_Path_DFS {
+
+    public static ArrayList<Integer> getPathDFS(int[][] edgges,boolean[] visited,int sv,int ev)
+    {
+        if(sv>=edgges.length) return null;
+       visited[sv]=true;
+        if(sv==ev)
+        {
+            ArrayList<Integer> list=new ArrayList<>();
+            list.add(ev);
+            return list;
+        }
+
+        for(int i=0;i<edgges.length;i++)
+        {
+            if(edgges[sv][i]==1&&!visited[i])
+            {
+                ArrayList<Integer> ans=getPathDFS(edgges,visited,i,ev);
+                if(ans!=null)
+                {
+                    ans.add(sv);
+                    return ans;
+                }
+            }
+        }
+
+        return null;
+    }
+    public static void main(String[] args) {
+        int n;
+        int e;
+        Scanner s = new Scanner(System.in);
+        n = s.nextInt();
+        e = s.nextInt();
+        int[][] edges = new int[n][n];
+
+        for (int i = 0; i < e; i++) {
+            int fv = s.nextInt();
+            int sv = s.nextInt();
+            edges[fv][sv] = 1;
+            edges[sv][fv] = 1;
+        }
+
+        int sk = s.nextInt();
+        int ek = s.nextInt();
+        boolean[] visited=new boolean[n];
+        ArrayList<Integer> ans=getPathDFS(edges,visited,sk,ek);
+        if(ans!=null){
+            for(int num:ans)
+            {
+                System.out.print(num+" ");
+            }
+        }
+    }
+
 }
