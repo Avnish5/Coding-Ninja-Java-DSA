@@ -9,8 +9,8 @@
       <change beforePath="$PROJECT_DIR$/../../Week-12/Lecture-13-DP-2/src/lecture_13_dp_2/KnapSack_Recursion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week-12/Lecture-13-DP-2/src/lecture_13_dp_2/KnapSack_Recursion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lecture-23-Graph-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lecture-23-Graph-1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lecture-23-Graph-1/src/lecture_23_graph_1/Get_Path_DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lecture-23-Graph-1/src/lecture_23_graph_1/Get_Path_DFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/adj_list_graph/Detect_Cycle_directed_DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/adj_list_graph/Detect_Cycle_directed_DFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lecture_24_graph_2/Union_Find_Algo_By_Rank.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lecture_24_graph_2/Union_Find_Algo_By_Rank.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +67,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731149006881</updated>
       <workItem from="1731149007913" duration="1255000" />
-      <workItem from="1731219036962" duration="5645000" />
+      <workItem from="1731219036962" duration="11596000" />
     </task>
     <servers />
   </component>
