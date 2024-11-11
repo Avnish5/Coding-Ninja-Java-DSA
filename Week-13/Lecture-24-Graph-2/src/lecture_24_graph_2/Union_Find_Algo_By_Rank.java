@@ -8,6 +8,10 @@ public class Union_Find_Algo_By_Rank {
     Union_Find_Algo_By_Rank(int size){
         parent=new int[size];
         rank=new int[size];
+
+        for(int i=0;i<size;i++){
+            parent[i]=i;
+        }
     }
 
     public int find(int i)
