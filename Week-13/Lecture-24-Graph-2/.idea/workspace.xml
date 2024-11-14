@@ -9,8 +9,6 @@
       <change beforePath="$PROJECT_DIR$/../../Week-12/Lecture-13-DP-2/src/lecture_13_dp_2/KnapSack_Recursion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week-12/Lecture-13-DP-2/src/lecture_13_dp_2/KnapSack_Recursion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lecture-23-Graph-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lecture-23-Graph-1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lecture-23-Graph-1/src/lecture_23_graph_1/Get_Path_DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lecture-23-Graph-1/src/lecture_23_graph_1/Get_Path_DFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/bonus_assignment/Connecting_Dots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bonus_assignment/Largest_Piece.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +75,7 @@
       <workItem from="1731262318972" duration="722000" />
       <workItem from="1731299383631" duration="19651000" />
       <workItem from="1731409585416" duration="17096000" />
-      <workItem from="1731518329659" duration="3793000" />
+      <workItem from="1731518329659" duration="4138000" />
     </task>
     <servers />
   </component>
