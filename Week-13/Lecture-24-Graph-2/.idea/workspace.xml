@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/../Lecture-23-Graph-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Lecture-23-Graph-1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Lecture-23-Graph-1/src/lecture_23_graph_1/Get_Path_DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Lecture-23-Graph-1/src/lecture_23_graph_1/Get_Path_DFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bonus_assignment/Connecting_Dots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bonus_assignment/Largest_Piece.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,25 +36,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Coding_Ninjas.executor": "Run",
-    "Application.Connecting_Dots.executor": "Run",
-    "Application.Dijkastra_Algo.executor": "Run",
-    "Application.Graph_Using_List.executor": "Run",
-    "Application.Kruskals_Algorithm.executor": "Run",
-    "Application.Prism_Algorithm.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Coding_Ninjas.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Connecting_Dots.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Dijkastra_Algo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Graph_Using_List.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Islands.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Kruskals_Algorithm.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Prism_Algorithm.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -74,7 +76,8 @@
       <workItem from="1731219036962" duration="17148000" />
       <workItem from="1731262318972" duration="722000" />
       <workItem from="1731299383631" duration="19651000" />
-      <workItem from="1731409585416" duration="9317000" />
+      <workItem from="1731409585416" duration="17096000" />
+      <workItem from="1731518329659" duration="3793000" />
     </task>
     <servers />
   </component>

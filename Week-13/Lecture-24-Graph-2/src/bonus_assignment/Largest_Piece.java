@@ -21,77 +21,59 @@ ABCA
 AAAA
 Sample Output 1:
 true
-import java.util.*;
-
-public class Solution {
-
-    int solve(String[] board , int n, int m)
-	{
-		return 1;
-	}
-
-
-
-
  */
-public class Connecting_Dots {
+public class Largest_Piece {
 
     static int[] dx = {-1, 1, 0, 0};
     static int[] dy = {0, 0, -1, 1,};
-
-    public  static  boolean isBound(int x,int y,int n,int m){
+    private static boolean isBound(int x,int y,int n,int m)
+    {
         return x>=0&&x<n&&y>=0&&y<m;
     }
-    private static boolean dfs(String[] board, int n, int m, int x, int y,int px,int py, boolean[][] visited,char color,int depth){
+    private static int dfs(String[] graph, int n, int m, int x, int y, boolean[][] visited) {
         visited[x][y]=true;
-
+        int ans=1;
         for(int i=0;i<4;i++)
         {
             int nx=x+dx[i];
             int ny=y+dy[i];
 
-            boolean isBounded=isBound(nx,ny,n,m);
+            boolean isBoundeding=isBound(nx,ny,n,m);
 
-            if(isBounded&&board[nx].charAt(ny)==color)
+            if(isBoundeding&&!visited[nx][ny]&&graph[nx].charAt(ny)=='1')
             {
-                if(!visited[nx][ny])
-                {
-                    if(dfs(board,n,m,nx,ny,x,y,visited,color,depth+1)) return true;
-                }
-                else if(nx!=px||ny!=py)
-                {
-                    if(depth>=4) return true;
-                }
+                ans+=dfs(graph,n,m,nx,ny,visited);
+
             }
         }
 
-     return false;
+
+        return ans;
     }
 
-    int solve(String[] board , int n, int m){
+    private static int hasPath(String[] graph, int n, int m) {
         boolean[][] visited=new boolean[n][m];
-
+        int ans=0;
         for(int i=0;i<n;i++)
         {
             for(int j=0;j<m;j++)
             {
-                if(!visited[i][j])
+                if(graph[i].charAt(j)=='1' &&!visited[i][j])
                 {
-                    if(dfs(board,n,m,i,j,-1,-1,visited,board[i].charAt(j),1)) return 1;
+                    int smallAns=dfs(graph,n,m,i,j,visited);
+                    ans=Math.max(smallAns,ans);
+
                 }
             }
         }
-        return 0;
+        return ans;
     }
 
-    public static void main(String[] args) {
-        String[] graph = {
-                "AAAA",
-                "ABCA",
-                "AAAA"
-        };
-        int N = graph.length;
-        int M = graph[0].length();
+
+    public static int dfs(String[] edge, int n) {
+        int N = edge.length;
+        int M = edge[0].length();
+        return hasPath(edge,N,M);
     }
 
 }
